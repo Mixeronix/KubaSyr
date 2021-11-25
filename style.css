@@ -1,0 +1,228 @@
+:root{
+    --transparent-blue: #1d0c3cd9;
+    --blue: #15172F;
+    --red: #FF0000;
+    --white: #fff;
+    --controls-clr: #1A8FB7;
+}
+
+::-webkit-scrollbar{
+    width: 0.75rem;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--blue);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--controls-clr);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+
+}
+
+a:-webkit-any-link{
+    text-decoration: none !important;
+    color: var(--white) !important;
+}
+
+nav{
+    z-index: 100000;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 12.5%;
+    background-color: var(--transparent-blue);
+    animation: nav 0.5s ease-out;
+    animation-fill-mode: forwards;
+    transform: translateY(-100%);
+}
+
+@keyframes nav {
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fade-in {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(100%);
+    }
+}
+
+.nav-box{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.nav-box:nth-of-type(1){
+    float: left;
+}
+.nav-box:nth-of-type(2){
+    float: right;
+}
+
+.btn{
+    transform: scale(0%);
+    margin: auto 0;
+    font-size: 1.25rem;    
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.logo{
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    transform: scale(0%);
+    height: 100%;
+    animation: fade-in 0.5s ease-out 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.btn_nav_1{
+    animation: fade-in 0.5s ease-out 0.9s forwards;
+}
+
+.btn_nav_2{
+    animation: fade-in 0.5s ease-out 1.2s forwards;
+}
+
+main{
+    padding-top: 17.5rem;
+    height: calc(100vh - 17.5rem);
+    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url('img/Background.jpg');
+    background-size: cover;
+
+}
+
+#main_title{
+
+    height: fit-content;
+    width: fit-content;
+    font-weight: 400;
+    font-size: 6rem;
+    letter-spacing: 0.25rem;
+    margin: 0 auto;
+}
+
+main > p{
+    width: fit-content;
+    margin: -1rem auto 0;
+    font-size: 2.45rem;
+    font-weight: 300;
+}
+
+.btn2{
+    cursor: pointer;
+    margin: 1.5rem auto;
+    width: fit-content;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    font-size: 1.25rem;
+    background-color: var(--transparent-blue);
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+
+    transform: scale(0);
+    animation: fade-in 0.45s ease-out 0.75s forwards;
+    transition: all 0.5s ease-in-out !important;
+}
+
+.btn2:hover{
+    transform: scale(1.2) !important;
+}
+
+#shows{
+    height: fit-content !important;
+    width: 100%;
+    background-color: var(--blue);
+    padding: 1rem 0 3rem;
+}
+
+#shows_h2{
+    margin: 2rem auto 3rem;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 2.25rem;
+    letter-spacing: 0.1rem;
+}
+
+.swiper{
+    width: 100%;
+    height: fit-content !important;
+    margin: 2rem;
+
+}
+
+.swiper-slide{
+    cursor: pointer;
+    background-color: var(--red);
+    border-radius: 0.15rem !important;
+    padding: 4rem 0;
+    width: 25% !important;
+    margin: 0 calc(25% / 6) !important;
+}
+
+.swiper-slide > h2{
+    font-size: 2.25rem;
+    font-weight: 400;
+    margin: auto;
+    width: fit-content;
+}
+
+.swiper-slide > p{
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0.5rem auto;
+    width: fit-content;
+}
+
+.swiper-pagination{ position: relative !important; }
+
+.swiper-pagination-bullet{
+    width: 12px !important;
+    height: 12px !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    border: solid 1px var(--controls-clr);
+    opacity: 0.75 !important;
+}
+.swiper-pagination-bullet-active{
+    width: 14px !important;
+    height: 14px !important;
+    border: none !important;
+    background: var(--controls-clr) !important;
+    opacity: 1 !important;
+}
+
+.swiper-nav{
+    color: var(--controls-clr) !important;
+    opacity: 1 !important;
+}
+
+.swiper-button-disabled{
+    opacity: 0.25 !important;
+}
+
+#about{
+    height: 1000px;
+}
+
