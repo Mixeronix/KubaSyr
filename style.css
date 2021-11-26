@@ -140,14 +140,6 @@ main > p{
     background-color: var(--transparent-blue);
     font-weight: 300;
     letter-spacing: 0.05rem;
-
-    transform: scale(0);
-    animation: fade-in 0.45s ease-out 0.75s forwards;
-    transition: all 0.5s ease-in-out !important;
-}
-
-.btn2:hover{
-    transform: scale(1.2) !important;
 }
 
 #shows{
@@ -193,6 +185,17 @@ main > p{
     font-weight: 300;
     margin: 0.5rem auto;
     width: fit-content;
+}
+
+
+.swiper-slide > p,
+.swiper-slide > h2{
+    transition: transform 0.25s ease;
+}
+
+.swiper-slide:hover > p,
+.swiper-slide:hover > h2 {
+    transform: scale(1.1);
 }
 
 .swiper-pagination{ position: relative !important; }

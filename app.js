@@ -15,7 +15,20 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
+
 const controller = new ScrollMagic.Controller();
+
+
+var tl = new TimelineMax();
+
+tl.from('.btn2', 0.45, {scale: 0}, '+=0.75')
+
+$('.btn2').on('mouseenter', function() {
+  tl.to('.btn2', 0.3, {scale: 1.1})
+}).on('mouseleave', function(){
+  tl.to('.btn2', 0.3, {scale: 1})
+});
+
 
 
 var tl1 = new TimelineMax();
