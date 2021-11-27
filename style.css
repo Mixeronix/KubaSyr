@@ -4,6 +4,8 @@
     --red: #FF0000;
     --white: #fff;
     --controls-clr: #1A8FB7;
+    --light-purple: #7D40CD;
+    --dark-purple: #30216D;
 }
 
 ::-webkit-scrollbar{
@@ -18,6 +20,7 @@
 
 html{
     scroll-behavior: smooth;
+    width: 100vw;
 }
 
 body {
@@ -26,7 +29,13 @@ body {
     background-size: cover;
     font-family: 'Roboto', sans-serif;
     color: var(--white);
+    width: 100%;
 
+}
+
+.observer{
+    height: 0;
+    width: 100%;
 }
 
 a:-webkit-any-link{
@@ -38,12 +47,14 @@ nav{
     z-index: 100000;
     top: 0;
     position: fixed;
-    width: 100%;
-    height: 12.5%;
+    width: 100vw !important;
+    height: 5rem;
     background-color: var(--transparent-blue);
     animation: nav 0.5s ease-out;
     animation-fill-mode: forwards;
     transform: translateY(-100%);
+
+    transition: height 0.25s ease-in-out;
 }
 
 @keyframes nav {
@@ -226,6 +237,90 @@ main > p{
 }
 
 #about{
-    height: 1000px;
+    background-color: var(--blue);
+    position: relative;
 }
 
+#about > h1{
+    font-weight: 300;
+    width: fit-content;
+    margin: auto;
+    font-size: 2.25rem;
+    letter-spacing: 0.05rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.section_about{
+    padding: 1.75rem 1.25rem;
+    height: 17.5rem;
+}
+
+.section_about > *{
+    margin: 0;
+}
+
+
+
+#section_about_1{
+    background-color: var(--controls-clr);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 15rem);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+#section_about_2{
+    background-color: var(--light-purple);
+    margin: -6.1rem 0 -4.75rem ;
+    height: 20rem;
+    clip-path: polygon(0 0, 100% 25%, 100% 80%, 0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#section_about_3{
+    background-color: var(--dark-purple);
+    clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.content_about{
+    width: 50%;
+}
+#section_about_1 > .content_about{
+    transform: translateY(-2.5rem);
+}
+#section_about_2 > .content_about{
+    float: right;
+}
+
+.about_sec_title{
+    font-weight: 500;
+}
+
+.content_about > p{
+    width: 90%;
+    font-weight: 400;
+    font-size: 1.15rem;
+}
+
+.img_about{
+    opacity: 0.7;
+    width: 47.5%;
+}
+
+#img_about_1{
+    position: absolute;
+    right: -5rem;
+    transform: translateY(-2.5rem);
+}
+#img_about_2{
+    position: absolute;
+
+    left: 0 !important;
+}

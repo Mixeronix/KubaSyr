@@ -1,3 +1,4 @@
+// Starting Slider
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
@@ -16,9 +17,43 @@ const swiper = new Swiper('.swiper', {
 });
 
 
+
+// Scroll to Sections Function
+function btn_to(to) {
+  window.scrollTo(0, $('#' + to).offset().top - $('nav').height() );
+}
+
+
+// Smaller Navigation-Bar on Scroll
+const nav = $("nav");
+const sectionOne = document.querySelector(".observer");
+
+const sectionOneOptions = {
+  rootMargin: "0px 0px 0px 0px"
+};
+
+const sectionOneObserver = new IntersectionObserver(function(
+  entries
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      nav.css({"height": "3rem"});
+    } else {
+      nav.css({"height": "5rem"});
+    }
+    });
+},
+sectionOneOptions);
+
+sectionOneObserver.observe(sectionOne);
+
+
+
+// Animations
 const controller = new ScrollMagic.Controller();
 
 
+// On-Load Animation
 var tl = new TimelineMax();
 
 tl.from('.btn2', 0.45, {scale: 0}, '+=0.75')
@@ -30,7 +65,7 @@ $('.btn2').on('mouseenter', function() {
 });
 
 
-
+// Section I Animations
 var tl1 = new TimelineMax();
 
 tl1.from('#shows_h2', 0.75, {y: 150, opacity: 0})

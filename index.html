@@ -15,16 +15,17 @@
 
 </head>
 <body>
+    <div class="observer"></div>
     <nav>
         <div class="nav-box">        
-            <a href="#shows" class="btn btn_nav_2">POŘADY</a>
-            <a href="#about" class="btn btn_nav_1">O PROJEKTU</a>
+            <div onclick="btn_to('shows')" class="btn btn_nav_2">POŘADY</div>
+            <div onclick="btn_to('about')" class="btn btn_nav_1">O PROJEKTU</div>
         </div>
 
         <img class="logo" src="img/logo.png" alt="">
             <div class="nav-box">
-                <a href="#map" class="btn btn_nav_1">INTERAKTIVNÍ MAPA</a>
-                <a href="#contact" class="btn btn_nav_2">KONTAKT</a>
+                <div onclick="btn_to('map')" class="btn btn_nav_1">INTERAKTIVNÍ MAPA</div>
+                <div onclick="btn_to('contact')" class="btn btn_nav_2">KONTAKT</div>
             </div>
 
 
@@ -85,9 +86,49 @@
 
     </div>
 
+
     <div id="about">
+        <h1>O PROJEKTU</h1>
+
+        <div class="section_about" id="section_about_1">
+
+            <div class="content_about">
+                <h3 class="about_sec_title">Lorem, ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates animi sunt dolores ipsam voluptas unde fugit vero ullam culpa. Quisquam aut velit eum cum laboriosam a perferendis quae nostrum minima?</p>
+            </div>
+
+            <img src="img/logo.png" class='img_about' id='img_about_1' alt="">
+
+        </div>
+
+        <div class="section_about" id="section_about_2">
+
+            <img src="img/D&D.png" class="img_about" id='img_about_2' alt="">
+
+            <div class="content_about">
+                <h3 class="about_sec_title">Suscipit, asperiores eum.</h3>
+                <p>Officiis at quaerat harum autem facilis, expedita libero nostrum qui mollitia deleniti sapiente debitis asperiores provident incidunt accusantium itaque quo architecto aut? Delectus eligendi beatae, libero distinctio praesentium reiciendis earum!</p>
+            </div>
+
+        </div>
+
+        <div class="section_about" id="section_about_3">
+            <div class="content_about">
+                <h3 class="about_sec_title">Pariatur, ad fuga.</h3>
+                <p>Rem deserunt eveniet, cupiditate fugiat aliquam perferendis necessitatibus, facilis quia itaque ipsum nesciunt assumenda. Totam aut fugiat facere dolorum saepe eligendi, ipsam cum perspiciatis ducimus sit veniam. Ea, asperiores nulla.</p>
+            </div>
+        </div>    
+    
+    </div>
+
+    <div id="map">
 
     </div>
+
+    <div id="contact">
+
+    </div>
+
 
     <script src="jquery.js"></script>
 
