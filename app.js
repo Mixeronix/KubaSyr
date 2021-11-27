@@ -20,7 +20,11 @@ const swiper = new Swiper('.swiper', {
 
 // Scroll to Sections Function
 function btn_to(to) {
-  window.scrollTo(0, $('#' + to).offset().top - $('nav').height() );
+  if (to == 'home'){
+    window.scrollTo(0,0);
+  } else {
+  window.scrollTo(0, $('#' + to).offset().top - 48 );
+  }
 }
 
 
@@ -58,14 +62,21 @@ var tl = new TimelineMax();
 
 tl.from('.btn2', 0.45, {scale: 0}, '+=0.75')
 
+// On hover animations
 $('.btn2').on('mouseenter', function() {
   tl.to('.btn2', 0.3, {scale: 1.1})
 }).on('mouseleave', function(){
   tl.to('.btn2', 0.3, {scale: 1})
 });
 
+$('.btn_about').on('mouseenter', function() {
+  tl.to('.btn_about', 0.3, {scale: 1.05})
+}).on('mouseleave', function(){
+  tl.to('.btn_about', 0.3, {scale: 1})
+});
 
-// Section I Animations
+
+// Section Shows Animations
 var tl1 = new TimelineMax();
 
 tl1.from('#shows_h2', 0.75, {y: 150, opacity: 0})
@@ -82,3 +93,24 @@ const scene1 = new ScrollMagic.Scene({
         .addTo(controller);
 
 
+// Section About Animations
+var tl2 = new TimelineMax();
+
+tl2.from('#section_about_1', 1, {x: '100%'})
+  .from('#about > h1', 0.5, {opacity: 0, y: 50}, '-=0.25')
+  .from('#section_about_1 > .content_about', 0.75, {opacity: 0, y: 100}, '-=0.5')
+  .from('#img_about_1', 1, {opacity: 0, scale: 0}, '-=0.5')
+
+  .from('#section_about_2', 1, {x: '-100%'}, '-=1.25')
+  .from('#section_about_2 > .content_about', 0.75, {opacity: 0, y: 100}, '-=0.5')
+  .from('#img_about_2', 1, {opacity: 0, scale: 0}, '-=0.5')
+
+  .from('#section_about_3', 1, {x: '100%'}, '-=1.25')
+  .from('#section_about_3 > .content_about', 0.75, {opacity: 0, y: 100}, '-=0.5')
+  .from('.btn_about', 0.5, {opacity: 0, y: 50}, '-=0.5')
+
+const scene2 = new ScrollMagic.Scene({
+    triggerElement: "#about"
+})
+    .setTween(tl2)
+        .addTo(controller);

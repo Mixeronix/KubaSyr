@@ -99,6 +99,7 @@ nav{
 
 .logo{
     position: absolute;
+    cursor: pointer;
     margin: auto;
     right: 0;
     left: 0;
@@ -239,31 +240,29 @@ main > p{
 #about{
     background-color: var(--blue);
     position: relative;
+    height: fit-content;
 }
 
 #about > h1{
     font-weight: 300;
     width: fit-content;
     margin: auto;
-    font-size: 2.25rem;
-    letter-spacing: 0.05rem;
+    font-size: 2.5rem;
     position: absolute;
-    top: 0.5rem;
+    top: 0.75rem;
     left: 0;
     right: 0;
     z-index: 10;
+    
 }
 
 .section_about{
-    padding: 1.75rem 1.25rem;
-    height: 17.5rem;
+    padding: 1.75rem 1.75rem 0.75rem;
 }
 
 .section_about > *{
     margin: 0;
 }
-
-
 
 #section_about_1{
     background-color: var(--controls-clr);
@@ -271,22 +270,24 @@ main > p{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    height: calc( (100vh - 3rem) / 2.85);
 }
 #section_about_2{
     background-color: var(--light-purple);
     margin: -6.1rem 0 -4.75rem ;
-    height: 20rem;
     clip-path: polygon(0 0, 100% 25%, 100% 80%, 0 100%);
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    height: calc( (100vh - 3rem) / 2.175);
+
 }
 #section_about_3{
     background-color: var(--dark-purple);
     clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0 100%);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    height: calc( (100vh - 3rem) / 3.75);
 }
 
 .content_about{
@@ -301,17 +302,20 @@ main > p{
 
 .about_sec_title{
     font-weight: 500;
+    font-size: 1.25rem;
+    margin: 0;
 }
 
 .content_about > p{
     width: 90%;
-    font-weight: 400;
-    font-size: 1.15rem;
+    margin: 0.75rem 0;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 .img_about{
     opacity: 0.7;
-    width: 47.5%;
+    width: 45%;
 }
 
 #img_about_1{
@@ -323,4 +327,22 @@ main > p{
     position: absolute;
 
     left: 0 !important;
+}
+
+.btn_about{
+    background-color: var(--controls-clr);
+    border-radius: 0.5rem;
+    padding: 2rem 2.5rem;
+    max-width: 22.5%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+
+#map{
+    /* height: 1000px;
+    background-color: var(--blue); */
 }
