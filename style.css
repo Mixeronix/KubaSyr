@@ -332,17 +332,17 @@ main > p{
 .btn_about{
     background-color: var(--controls-clr);
     border-radius: 0.5rem;
-    padding: 2rem 2.5rem;
+    padding: 1.75rem 2.5rem;
     max-width: 22.5%;
     text-align: center;
     margin: 0 auto;
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: 1.25rem;
+    font-weight: 400;
     cursor: pointer;
 }
 
 
 #map{
-    /* height: 1000px;
-    background-color: var(--blue); */
+    height: 1000px;
+    background-color: var(--blue);
 }
