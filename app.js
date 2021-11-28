@@ -54,12 +54,11 @@ sectionOneObserver.observe(sectionOne);
 
 
 // Animations
-const controller = new ScrollMagic.Controller();
 
+// // On-Load Animation
+var tl = gsap.timeline({
 
-// On-Load Animation
-var tl = new TimelineMax();
-
+});
 tl.from('.btn2', 0.45, {scale: 0}, '+=0.75')
 
 // On hover animations
@@ -77,25 +76,27 @@ $('.btn_about').on('mouseenter', function() {
 
 
 // Section Shows Animations
-var tl1 = new TimelineMax();
+var tl1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#shows',
+    start: "top 30%",
+    }
+});
 
-tl1.from('#shows_h2', 0.75, {y: 150, opacity: 0})
+tl1.from('#shows_h2', {y: 150, opacity: 0, duration: 0.75})
     .from('.swiper-slide:nth-of-type(1)', 0.5, {y: 100, opacity: 0}, '-=0.35')
     .from('.swiper-slide:nth-of-type(2)', 0.5, {y: 100, opacity: 0}, '-=0.25')
     .from('.swiper-slide:nth-of-type(3)', 0.5, {y: 100, opacity: 0}, '-=0.25')
     .from('.swiper-nav', 0.75, {scale: 0}, '-=0.2')
 
 
-const scene1 = new ScrollMagic.Scene({
-    triggerElement: "#shows"
-})
-    .setTween(tl1)
-        .addTo(controller);
-
-
-// Section About Animations
-var tl2 = new TimelineMax();
-
+// // Section About Animations
+var tl2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#about',
+    start: "top 15%",
+    }
+});
 tl2.from('#section_about_1', 1, {x: '100%'})
   .from('#about > h1', 0.5, {opacity: 0, y: 50}, '-=0.25')
   .from('#section_about_1 > .content_about', 0.75, {opacity: 0, y: 100}, '-=0.5')
@@ -108,9 +109,3 @@ tl2.from('#section_about_1', 1, {x: '100%'})
   .from('#section_about_3', 1, {x: '100%'}, '-=1.25')
   .from('#section_about_3 > .content_about', 0.75, {opacity: 0, y: 100}, '-=0.5')
   .from('.btn_about', 0.5, {opacity: 0, y: 50}, '-=0.5')
-
-const scene2 = new ScrollMagic.Scene({
-    triggerElement: "#about"
-})
-    .setTween(tl2)
-        .addTo(controller);
