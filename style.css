@@ -44,7 +44,7 @@ a:-webkit-any-link{
 }
 
 nav{
-    z-index: 100000;
+    z-index: 100;
     top: 0;
     position: fixed;
     width: 100vw !important;
@@ -55,6 +55,86 @@ nav{
     transform: translateY(-100%);
 
     transition: height 0.25s ease-in-out;
+}
+
+#side_nav{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--transparent-blue);
+    z-index: 10;
+    clip-path: circle(0% at 100% 0);
+    transition: all 0.5s ease-out;
+}
+
+#hamburger{
+    display: none;
+    z-index: 10;
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+#hamburger span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#hamburger span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#hamburger span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+.nav_open span
+{
+  opacity: 1;
+  transform: rotate(-45deg) translate(-2px, -1px);
+  background: #232323;
+}
+.nav_open span:nth-last-child(2)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+.nav_open span:nth-last-child(3)
+{
+  transform: rotate(45deg) translate(0, -1px);
+}
+
+.buttons{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.side_btn{
+    z-index: 100;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 @keyframes nav {
@@ -179,25 +259,41 @@ main > p{
 
 .swiper-slide{
     cursor: pointer;
-    background-color: var(--red);
     border-radius: 0.15rem !important;
     padding: 4rem 0;
+    background: var(--controls-clr);
     width: 25% !important;
     margin: 0 calc(25% / 6) !important;
+    background-size: cover;
+}
+.swiper-slide:nth-of-type(1){
+    background-image: url(img/shows_img_1.png);
+}
+.swiper-slide:nth-of-type(2){
+    background-image: url(img/shows_img_2.png);
+}
+.swiper-slide:nth-of-type(3){
+    background-image: url(img/shows_img_3.png);
+}
+.swiper-slide:nth-of-type(4){
+    background-image: url(img/shows_img_4.png);
 }
 
 .swiper-slide > h2{
     font-size: 2.25rem;
-    font-weight: 400;
+    font-weight: 500;
     margin: auto;
     width: fit-content;
+    color: var(--blue);
+
 }
 
 .swiper-slide > p{
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin: 0.5rem auto;
     width: fit-content;
+    color: var(--dark-purple);
 }
 
 
@@ -248,7 +344,7 @@ main > p{
     font-weight: 300;
     width: fit-content;
     margin: auto;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     position: absolute;
     top: 0.75rem;
     left: 0;
@@ -366,6 +462,12 @@ main > p{
 @media (max-width: 800px) {
     .btn{
         visibility: hidden;
+    }
+    .nav_open #side_nav{
+        clip-path: circle(150% at 100% 0);
+    }
+    #hamburger{
+        display: unset;
     }
     #main_title{
         font-size: 4rem;

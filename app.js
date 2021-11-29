@@ -32,6 +32,13 @@ const swiper = new Swiper('.swiper', {
 });
 
 
+// Open Side Nav
+$('#hamburger').click(function() {
+  $('body').toggleClass('nav_open');
+  tl.from('.side_btn', 0.3, {scale: 0, opacity: 0}, '+=0.35')
+})
+
+
 
 // Scroll to Sections Function
 function btn_to(to) {
@@ -40,6 +47,8 @@ function btn_to(to) {
   } else {
   window.scrollTo(0, $('#' + to).offset().top - 48 );
   }
+  $('body').removeClass('nav_open');
+
 }
 
 
