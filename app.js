@@ -2,8 +2,7 @@
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
-    slidesPerView: 3,
-    slidesPerGroup: 3,
+  
   
     pagination: {
       el: '.swiper-pagination',
@@ -14,6 +13,22 @@ const swiper = new Swiper('.swiper', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+
+    breakpoints: {
+      400: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+      },
+      800: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      1000: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      }
+    }
+
 });
 
 

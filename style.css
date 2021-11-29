@@ -154,55 +154,6 @@ main > p{
     letter-spacing: 0.05rem;
 }
 
-@media (max-width: 1000px) {
-    .btn{
-        font-size: 1rem;
-    }
-    #main_title{
-        font-size: 5rem;
-    }
-    main > p{
-        font-size: 2rem;
-    }
-}
-@media (max-width: 800px) {
-    .btn{
-        visibility: hidden;
-    }
-    #main_title{
-        font-size: 4rem;
-    }
-    main > p{
-        font-size: 1.75rem;
-        text-align: center;
-    }
-    .btn2{
-        font-size: 1rem;
-    }
-}
-@media (max-width: 600px) {
-
-    #main_title{
-        font-size: 3rem;
-        letter-spacing: 0.15rem;
-    }
-    main > p{
-        font-size: 1.25rem;
-    }
-}
-@media (max-width: 400px) {
-
-    #main_title{
-        font-size: 2.25rem;
-        letter-spacing: 0.1rem;
-    }
-    main > p{
-        margin-top: 0.25rem;
-        font-size: 1rem;
-        letter-spacing: 0.01rem;
-    }
-
-}
 
 #shows{
     height: fit-content !important;
@@ -395,4 +346,62 @@ main > p{
 #map{
     height: 1000px;
     background-color: var(--blue);
+}
+
+@media (max-width: 1000px) {
+    .btn{
+        font-size: 1rem;
+    }
+    #main_title{
+        font-size: 5rem;
+    }
+    main > p{
+        font-size: 2rem;
+    }
+    .swiper-slide{
+        width: 40% !important;
+        margin: 0 calc(20% / 4) !important;
+    }
+}
+@media (max-width: 800px) {
+    .btn{
+        visibility: hidden;
+    }
+    #main_title{
+        font-size: 4rem;
+    }
+    main > p{
+        font-size: 1.75rem;
+        text-align: center;
+    }
+    .btn2{
+        font-size: 1rem;
+    }
+    .swiper-slide{
+        width: 80% !important;
+        margin: 0 calc(20% / 2) !important;
+    }
+}
+@media (max-width: 600px) {
+
+    #main_title{
+        font-size: 3rem;
+        letter-spacing: 0.15rem;
+    }
+    main > p{
+        font-size: 1.25rem;
+    }
+}
+@media (max-width: 400px) {
+
+    #main_title{
+        font-size: 2.25rem;
+        letter-spacing: 0.1rem;
+    }
+    main > p{
+        margin-top: 0.25rem;
+        font-size: 1rem;
+        letter-spacing: 0.01rem;
+    }
+
 }
