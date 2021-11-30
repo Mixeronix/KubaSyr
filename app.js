@@ -114,7 +114,7 @@ tl1.from('#shows_h2', {y: 150, opacity: 0, duration: 0.75})
     .from('.swiper-nav', 0.75, {scale: 0}, '-=0.2')
 
 
-// // Section About Animations
+// Section About Animations
 var tl2 = gsap.timeline({
   scrollTrigger: {
     trigger: '#about',
@@ -133,3 +133,21 @@ tl2.from('#section_about_1', 1, {x: '100%'})
   .from('#section_about_3', 1, {x: '100%'}, '-=1.25')
   .from('#section_about_3 > .content_about', 0.75, {opacity: 0, y: 100}, '-=0.5')
   .from('.btn_about', 0.5, {opacity: 0, y: 50}, '-=0.5')
+
+// Section Map Animations
+var tl3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#map',
+    // start: "top 15%",
+    }
+});
+tl3.from('#map_title', 0.75, {opacity: 0, y: 75})
+  .from('.map_box:nth-of-type(1)', 0.5, {opacity: 0, y: 50}, '-=0.2')
+  .from('.map_box:nth-of-type(2)', 0.5, {opacity: 0, y: 50}, '-=0.2')
+  .from('.map_box:nth-of-type(3)', 0.5, {opacity: 0, y: 50}, '-=0.2')
+  .from('.map_box:nth-of-type(4)', 0.5, {opacity: 0, y: 50}, '-=0.2')
+  .from('.map_box:nth-of-type(5)', 0.5, {opacity: 0, y: 50}, '-=0.2')
+  .to('.map_box', 1.25, {background: "rgba(0, 0, 0, 0.35)"}, '-=0.15')
+
+
+
