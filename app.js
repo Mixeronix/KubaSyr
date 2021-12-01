@@ -138,7 +138,7 @@ tl2.from('#section_about_1', 1, {x: '100%'})
 var tl3 = gsap.timeline({
   scrollTrigger: {
     trigger: '#map',
-    // start: "top 15%",
+    start: "top 15%",
     }
 });
 tl3.from('#map_title', 0.75, {opacity: 0, y: 75})
@@ -149,5 +149,18 @@ tl3.from('#map_title', 0.75, {opacity: 0, y: 75})
   .from('.map_box:nth-of-type(5)', 0.5, {opacity: 0, y: 50}, '-=0.2')
   .to('.map_box', 1.25, {background: "rgba(0, 0, 0, 0.35)"}, '-=0.15')
 
-
+// Section Contact Animations
+var tl4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#map',
+    }
+});
+tl4
+// .to('#contact', 1.5, {clipPath: "polygon(0% -1%, 100% -1%, 100% 100%, 0% 100%)"})
+// .to('#map > img', 1.5, {clipPath: "polygon(-1% -1%, 100% -1%, 100% 100%, -1% 100%)"}, '-=1.5')
+  .from('.contacts > img:nth-of-type(1)', 0.5, {rotate: 360, y: 30, opacity: 0})
+  .from('.contacts > img:nth-of-type(2)', 0.5, {rotate: 360, y: 30, opacity: 0}, '-=0.25')
+  .from('.contacts > img:nth-of-type(3)', 0.5, {rotate: 360, y: 30, opacity: 0}, '-=0.25')
+  .from('.contacts > img:nth-of-type(4)', 0.5, {rotate: 360, y: 30, opacity: 0}, '-=0.25')
+  .from('.contacts > img:nth-of-type(5)', 0.5, {rotate: 360, y: 30, opacity: 0}, '-=0.25')
 
